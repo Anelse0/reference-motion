@@ -1,0 +1,37 @@
+[
+  {
+    "script": "analyze.py",
+    "returncode": 0,
+    "usage": "usage: analyze.py [-h] --project PROJECT [--cut-threshold CUT_THRESHOLD]"
+  },
+  {
+    "script": "audio.py",
+    "returncode": 0,
+    "usage": "usage: audio.py [-h] --project PROJECT [--revision REVISION]"
+  },
+  {
+    "script": "encode.py",
+    "returncode": 0,
+    "usage": "usage: encode.py [-h] --project PROJECT --revision REVISION"
+  },
+  {
+    "script": "measure.py",
+    "returncode": 0,
+    "usage": "usage: measure.py [-h] {track,check} ..."
+  },
+  {
+    "script": "project.py",
+    "returncode": 0,
+    "usage": "usage: project.py [-h]"
+  },
+  {
+    "script": "render.mjs",
+    "returncode": 0,
+    "usage": "render.mjs --project P --revision R [--browser PATH] [--python PATH] stills 0,12,24 | compare 0,12 | full A B"
+  },
+  {
+    "script": "sync.py",
+    "returncode": 0,
+    "usage": "usage: sync.py [-h] --project PROJECT --revision REVISION --kind"
+  }
+]

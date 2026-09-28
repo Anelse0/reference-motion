@@ -1,0 +1,3 @@
+# Tested locally on Python 3.9.6. FFmpeg/ffprobe and Chromium are separate system dependencies.
+numpy==2.0.2
+Pillow==11.3.0

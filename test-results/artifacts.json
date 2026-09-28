@@ -1,0 +1,22 @@
+[
+  {
+    "path": "motion-workspace/projects/packet-flow/out/r004/preview.mp4",
+    "sha256": "e555ee32d69c1de52f72c036396c61da7462c08bb365b52dd6e09ba6a7f2cdf4",
+    "bytes": 84671
+  },
+  {
+    "path": "motion-workspace/projects/wave-sum/out/r004/preview.mp4",
+    "sha256": "5139b3acb73836f0b4590231ae853c18538989527b11fa20164f869b6f1ff78e",
+    "bytes": 370710
+  },
+  {
+    "path": "motion-workspace/projects/match-fixture/out/r004/preview.mp4",
+    "sha256": "92d54ae9e694d6f72b3fa8a50b2b0a00a5d7fa41ed10e314072baa99b43ef618",
+    "bytes": 5419
+  },
+  {
+    "path": "motion-workspace/projects/match-fixture/out/r004/comparison.mp4",
+    "sha256": "86d3a080cebb9c4f28527ad42bd79698b68c5d527c91ad19e008c5c8aef71bcf",
+    "bytes": 12706
+  }
+]

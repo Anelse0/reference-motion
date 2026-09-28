@@ -1,0 +1,38 @@
+# Local environments and installed dependencies
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.npm/
+.DS_Store
+
+# Local project state and generated delivery artifacts
+/work/
+/outputs/
+/motion-workspace/
+/projects/
+/memory/
+/out/
+/revisions/
+*.zip
+*.mp4
+*.mkv
+*.mov
+*.wav
+*.pcm
+*.tmp
+*.lock
+!package-lock.json
+
+# Local credentials and editor state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.idea/
+.vscode/

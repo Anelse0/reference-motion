@@ -1,0 +1,9 @@
+{
+  "name": "reference-motion",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Frame-addressed Canvas tooling for an agent-authored motion skill",
+  "type": "module",
+  "engines": {"node": ">=20"},
+  "dependencies": {"playwright": "1.62.1"}
+}

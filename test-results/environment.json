@@ -1,0 +1,24 @@
+{
+  "os": "macOS-27.0-arm64-arm-64bit",
+  "python": "3.9.6",
+  "numpy": "2.0.2",
+  "Pillow": "11.3.0",
+  "node": "v22.23.2",
+  "playwright": "1.62.1",
+  "browser": "153.0.8010.53",
+  "ffmpeg": "ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers",
+  "ffprobe": "ffprobe version 9.0.1 Copyright (c) 2007-2026 the FFmpeg developers",
+  "model": "unknown",
+  "browserSandbox": true,
+  "network": "virtual origin, all requests intercepted; allowlist only",
+  "toolHashes": {
+    "_common.py": "07f6371622b0df2cafdf9a24b220181e31c282c4dfe63b094508ec4982e88697",
+    "analyze.py": "a75db8decd2e10b83a87ca2a73144154b800cb5ae9d7a7cd4867aa7c93ec9bc8",
+    "audio.py": "dcca10c24d6e8375338797fd6927ab52e712661234084428257beb9e573e29d1",
+    "encode.py": "b59077c8225a65ae3c92d9dce89b8e73d50b3f2f10539b4b2a5761849d4223a1",
+    "measure.py": "8a9e76542faa0b8bd0d6b2a49a5d92beba43a857cbc4590a7f2fabcc67871bc1",
+    "project.py": "88844c4458f2659fd5d012af92945ffdd3beffa4d72ddeef1982663ebd05a8ac",
+    "render.mjs": "e7760ed219aeeabbfaadba5cdb2a8399148b48f4a4db6e4f06275805495a3c06",
+    "sync.py": "cd3fc0407ec95d286aa054a7230297f1dab3ac007f048ad0e1e77d798a96bf91"
+  }
+}
