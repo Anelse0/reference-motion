@@ -31,6 +31,8 @@ def main():
     (p/'BRIEF.md').write_text('# Controlled match fixture\nReconstruct the independent 160×96, 24fps, 48-frame engineering reference. No actual user reference exists. No creative or reverse-engineering capability claim. Original silent source stays silent.\n')
     (p/'SPEC.md').write_text('# Measured reconstruction experiment\nThe reference contains one white 20×20 pixel rectangle moving horizontally on black. Use full-frame white threshold measurement. Initial reconstruction deliberately starts three pixels too far right to test rejection and correction. All 48 visible frames must be measured. No semantic inference or user approval is tested.\n')
     (p/'REPORT.md').write_text('Prepared independent reference and intentionally inaccurate initial reconstruction. Rendering, measurement, correction and comparison remain pending.\n')
+    from analysis_fixture import populate
+    populate(p)
     print(p)
 
 if __name__=='__main__': main()

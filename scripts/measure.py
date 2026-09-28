@@ -135,7 +135,7 @@ def track(args):
     validate_detector(detector, size)
     observations = observe(directory, interval, detector, size)
     valid = sum(row["bbox"] is not None for row in observations)
-    data = {"object": args.object, **provenance, "method": "RGB threshold/4-connected components", "detector": detector, "range": interval,
+    data = {"kind":"track", "measuredProperties":["x","y","w","h"], "referenceSha256": provenance.get("sourceSha256"), "object": args.object, **provenance, "method": "RGB threshold/4-connected components", "detector": detector, "range": interval,
             "fullVisibleRangeDeclared": args.full_visible_range, "declarationBasis": args.basis,
             "size": list(size), "observations": observations, "coverage": valid / len(observations), "interpolated": False,
             "identityAndOcclusionReview": "unverified", "toolSha256": sha256(Path(__file__))}

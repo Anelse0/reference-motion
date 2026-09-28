@@ -60,6 +60,7 @@ async function main() {
     frames=(a||'').split(',').map(Number);
     if(positional.length!==2 || !a || frames.length>15 || frames.some(f=>!Number.isInteger(f)||f<0||f>=N)) throw Error('stills/compare needs 1–15 valid integer frame indices');
   } else throw Error('Expected stills, compare or full');
+  if(config.renderPurpose==='analysis-probe' && (command==='full' || frames.some(f=>!config.probeFrames.includes(f)))) throw Error('Analysis probe is restricted to its explicit still/compare frames; finish the analysis gate before production');
   if(command==='compare' && (config.mode!=='match' || !config.reference)) throw Error('compare requires actual match reference; use sync revision for before/after');
   const out = path.join(project,'out',opts.revision), frameDir=path.join(out,'frames'), review=path.join(out,'review');
   await safeOutput(project,frameDir); await safeOutput(project,review);
@@ -101,7 +102,7 @@ async function main() {
   const setup=await timed(page.evaluate(async({config,timeline,base})=>{
     const o=config.output, canvas=document.getElementById('frame');
     canvas.width=o.width;canvas.height=o.height;
-    const ctx=canvas.getContext('2d',{alpha:true,colorSpace:'srgb'});
+    const ctx=canvas.getContext('2d',{alpha:true,colorSpace:'srgb',willReadFrequently:true});
     const freeze=x=>{if(x&&typeof x==='object'){Object.freeze(x);for(const v of Object.values(x))freeze(v);}return x;};
     const assets=new Map();
     const fonts=[];

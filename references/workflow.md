@@ -18,7 +18,7 @@ Complete `project.json.output` with `width`, `height`, `fps:{num,den}`, `frames`
 
 ## Design and representative output
 
-For match, `analyze.py --project P` indexes the actual reference and extracts frames. View the overview and relevant continuous frame ranges; use `measure.py track --help` for explicit pixel-based measurements. Mechanical cut or beat candidates are observations requiring interpretation. Unknown or occluded values stay unknown. Locked cut points and events have zero-frame tolerance; measurable object bounds default to 1% of the corresponding image axis, subject to any stricter project requirement.
+For match, `analyze.py --project P` indexes the actual reference and extracts frames. Read [match-analysis.md](match-analysis.md) and complete its evidence contract before production. View the overview and actual continuous frame ranges; use `measure.py track --help` for explicit pixel-based measurements. Mechanical cut or beat candidates are observations requiring interpretation. Unknown or occluded values stay unknown. Locked cut points and events have zero-frame tolerance; measurable object bounds default to 1% of the corresponding image axis, subject to any stricter project requirement.
 
 For create, skip reference analysis. Write the real content goal, audience, source facts, chosen creative mechanism and reason, necessary storyboard, relevant design rules, and concrete checks. Safe design assumptions can be recorded and executed. Never invent product claims, missing legal copy, testimonials, or unavailable brand assets.
 
@@ -29,7 +29,7 @@ Use the same project code for proof frames and the eventual film. A representati
 1. Set output size, rational fps, total frames, declared assets and audio contract. Set time facts in `timeline.json` and validate with `project.py check --project P --stage render`.
 2. Freeze with `project.py snapshot --project P --revision r001`. All subsequent commands for r001 read `revisions/r001/source`, not the mutable working sources.
 3. Generate `render.mjs --project P --revision r001 stills 0,12,24` for a few meaningful frames or `full 0 N` for `[0,N)`. Write sound with `audio.py --project P --revision r001 synth`, then `check`.
-4. Run `measure.py check --project P --revision r001` and `encode.py --project P --revision r001 --preview`. In match, use `sync.py --project P --revision r001 --kind reference` for actual reference comparison. Comparison videos are silent visual inspection aids; review sound separately. Revision comparison uses explicit `--before MP4 --after MP4`, preserves source time, and labels the ended side if lengths differ.
+4. Run `measure.py check --project P --revision r001` and `encode.py --project P --revision r001 --preview`. In match, run `match.py verify --project P --revision r001`, then use `sync.py --project P --revision r001 --kind reference` for actual reference comparison. Comparison videos are silent visual inspection aids; review sound separately. Revision comparison uses explicit `--before MP4 --after MP4`, preserves source time, and labels the ended side if lengths differ.
 5. Inspect output, record evidence, and revise if necessary. A changed working source requires a new snapshot and output directory. Use `project.py restore --help` to recover a historical source into a new revision while keeping later history.
 
 Commands are a production sequence, not an animation or music template. Choose relevant frame requests from the project; the three frame numbers above only illustrate CLI syntax.

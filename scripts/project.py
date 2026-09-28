@@ -18,9 +18,9 @@ def validate_workspace_paths(w):
 
 
 def validate_working_paths(p):
-    for rel in ('project.json', 'timeline.json', 'BRIEF.md', 'SPEC.md', 'REPORT.md', 'used-memory.json', 'src', 'audio', 'history', 'history/feedback.jsonl', 'revisions', 'out'):
+    for rel in ('project.json', 'timeline.json', 'BRIEF.md', 'SPEC.md', 'REPORT.md', 'used-memory.json', 'src', 'audio', 'analysis', 'history', 'history/feedback.jsonl', 'revisions', 'out'):
         safe_path(p, rel)
-    for name in ('src', 'audio', 'history'):
+    for name in ('src', 'audio', 'analysis', 'history'):
         if (p / name).exists():
             for f in (p / name).rglob('*'):
                 safe_path(p, f.relative_to(p))
@@ -213,7 +213,11 @@ def init(args):
 def snapshot(args):
     p = Path(args.project).resolve()
     validate_working_paths(p)
-    c, t = validate_project(p)
+    probing = bool(getattr(args, 'probe_frames', None))
+    c, t = validate_project(p, 'probe' if probing else 'render')
+    probe_frames = sorted(set(int(x) for x in args.probe_frames.split(','))) if probing else []
+    if probing and (c['mode'] != 'match' or not 1 <= len(probe_frames) <= 15 or any(f < 0 or f >= c['output']['frames'] for f in probe_frames)):
+        raise ValueError('Analysis probe needs 1–15 explicit valid match frames')
     rev = ident(args.revision)
     dest = safe_path(p, 'revisions/' + rev)
     if dest.exists():
@@ -233,16 +237,16 @@ def snapshot(args):
     source = tmp / 'source'
     source.mkdir()
     old_config_hash = sha256(p / 'project.json')
-    frozen = dict(c, revision=rev, parentRevision=c.get('revision'))
+    frozen = dict(c, revision=rev, parentRevision=c.get('revision'), renderPurpose='analysis-probe' if probing else 'production', probeFrames=probe_frames)
     try:
         for name in ('BRIEF.md', 'SPEC.md', 'REPORT.md', 'timeline.json'):
             if (p / name).exists():
                 shutil.copy2(safe_path(p, name), source / name)
-        for dirname in ('src', 'audio'):
+        for dirname in ('src', 'audio', 'analysis'):
             base = p / dirname
             if base.exists():
                 for item in base.rglob('*'):
-                    if item.is_file() and '__pycache__' not in item.parts:
+                    if item.is_file() and '__pycache__' not in item.parts and (dirname != 'analysis' or item.suffix in ('.json', '.md', '.csv')):
                         src = safe_path(p, str(item.relative_to(p)))
                         dst = source / item.relative_to(p)
                         dst.parent.mkdir(parents=True, exist_ok=True)
@@ -281,16 +285,19 @@ def restore(args):
     if safe_path(p, 'revisions/' + ident(args.revision)).exists():
         raise ValueError('Restore target revision exists; working copy unchanged')
     source, c, t, m = load_revision(p, args.from_revision)
+    # Validate migration before changing the current working copy.
+    probing = c.get('renderPurpose') == 'analysis-probe'
+    validate_project(source, 'probe' if probing else 'render')
     # Preserve current authored files before changing the working copy, including unsnapshotted edits.
     backup = p / 'history' / ('working-before-restore-' + ident(args.revision))
     backup.mkdir(exist_ok=False)
-    for name in ('src', 'audio', 'BRIEF.md', 'SPEC.md', 'REPORT.md', 'timeline.json', 'project.json', 'used-memory.json'):
+    for name in ('src', 'audio', 'analysis', 'BRIEF.md', 'SPEC.md', 'REPORT.md', 'timeline.json', 'project.json', 'used-memory.json'):
         f = p / name
         if f.is_dir():
             shutil.copytree(f, backup / name)
         elif f.is_file():
             shutil.copy2(f, backup / name)
-    for name in ('src', 'audio'):
+    for name in ('src', 'audio', 'analysis'):
         if (p / name).exists():
             shutil.rmtree(p / name)
         if (source / name).exists():
@@ -308,7 +315,7 @@ def restore(args):
         shutil.copy2(src, dst)
     atomic_json(p / 'project.json', dict(c, revision=args.from_revision))
     atomic_json(p / 'used-memory.json', [])
-    snapshot(argparse.Namespace(project=str(p), revision=args.revision))
+    snapshot(argparse.Namespace(project=str(p), revision=args.revision, probe_frames=','.join(map(str,c.get('probeFrames',[]))) if probing else None))
     print('Working copy preserved at ' + str(backup))
 
 
@@ -332,7 +339,7 @@ def main():
     q = sub.add_parser('init'); q.add_argument('--workspace', required=True); q.add_argument('--id', required=True)
     q.add_argument('--mode', choices=['match', 'create'], required=True); q.add_argument('--ref'); q.set_defaults(func=init)
     q = sub.add_parser('check'); q.add_argument('--project', required=True); q.add_argument('--stage', choices=['init', 'render'], default='init'); q.set_defaults(func=check)
-    q = sub.add_parser('snapshot'); q.add_argument('--project', required=True); q.add_argument('--revision', required=True); q.set_defaults(func=snapshot)
+    q = sub.add_parser('snapshot'); q.add_argument('--project', required=True); q.add_argument('--revision', required=True); q.add_argument('--probe-frames', help='Match analysis probe: 1–15 explicit frames; cannot full-render or encode'); q.set_defaults(func=snapshot)
     q = sub.add_parser('restore'); q.add_argument('--project', required=True); q.add_argument('--from', dest='from_revision', required=True); q.add_argument('--revision', required=True); q.set_defaults(func=restore)
     q = sub.add_parser('feedback'); q.add_argument('--project', required=True); q.add_argument('--record', required=True)
     q = sub.add_parser('memory'); q.add_argument('--project', required=True)

@@ -1,4 +1,4 @@
-"""Small file/time/media helpers shared by the seven command-line tools."""
+"""Small file/time/media helpers shared by the command-line tools."""
 import contextlib
 import datetime
 from fractions import Fraction
@@ -12,7 +12,7 @@ import subprocess
 import sys
 import tempfile
 
-VERSION = '0.1.0'
+VERSION = '0.2.0'
 
 def now():
     return datetime.datetime.now(datetime.timezone.utc).isoformat()
@@ -107,7 +107,7 @@ def duration_samples(config):
     o = config['output']
     return round(Fraction(o['frames'] * o['fps']['den'] * config['audio']['sampleRate'], o['fps']['num']))
 
-def validate_project(project, stage='render'):
+def validate_project(project, stage='render', analysis_required=True):
     project = Path(project).resolve()
     c = read_json(project / 'project.json')
     ident(c['id'])
@@ -177,6 +177,11 @@ def validate_project(project, stage='render'):
     for tr in t.get('transitions', []):
         if not (type(tr['f0']) is int and type(tr['f1']) is int and 0 <= tr['f0'] < tr['f1'] <= o['frames']):
             raise ValueError('Invalid transition interval')
+    if c['mode'] == 'match' and analysis_required:
+        from match import analysis_gate
+        result = analysis_gate(project, c, 'probe' if stage == 'probe' else 'production')
+        if not result.get('allowed'):
+            raise ValueError('Match analysis gate: ' + json.dumps(result, ensure_ascii=False))
     return c, t
 
 def tool_hashes():
@@ -199,7 +204,8 @@ def load_revision(project, revision, require_tools=False):
     actual = {str(p.relative_to(source)) for p in source.rglob('*') if p.is_file() and '__pycache__' not in p.parts}
     if actual != set(m['files']):
         raise ValueError('Snapshot file set changed')
-    c, t = validate_project(source)
+    frozen_config = read_json(source / 'project.json')
+    c, t = validate_project(source, 'probe' if frozen_config.get('renderPurpose') == 'analysis-probe' else 'render', analysis_required=m.get('toolVersion') != '0.1.0')
     if c['id'] != m['projectId'] or c['revision'] != revision:
         raise ValueError('Snapshot config identity mismatch')
     return source, c, t, m

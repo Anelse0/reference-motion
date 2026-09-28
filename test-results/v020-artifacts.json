@@ -1,0 +1,144 @@
+[
+  {
+    "project": "packet-flow",
+    "revision": "r001",
+    "mode": "create",
+    "output": {
+      "width": 640,
+      "height": 360,
+      "fps": {
+        "num": 24,
+        "den": 1
+      },
+      "frames": 96,
+      "colorPolicy": "srgb-to-bt709-limited"
+    },
+    "previewSha256": "940de481bddb5431c51ad19ca8cb66240414dbb5ba4c93196441f72d9d1bd33b",
+    "fingerprint": "9241433c9053e86624318b49828db295b2ae3bd39db248c56bdbf43f1db1ad49",
+    "decodedFrames": 96,
+    "encodedStatus": "pass",
+    "encodedLUFS": -14.4,
+    "encodedTruePeakDBTP": -1.41,
+    "renderDeterminism": "pass",
+    "matchStatus": "not_applicable",
+    "maximum": null,
+    "perceptualReview": "unverified",
+    "userAcceptance": "unverified",
+    "finalExists": false
+  },
+  {
+    "project": "match-fixture",
+    "revision": "r001",
+    "mode": "match",
+    "output": {
+      "width": 160,
+      "height": 96,
+      "fps": {
+        "num": 24,
+        "den": 1
+      },
+      "frames": 48,
+      "colorPolicy": "srgb-to-bt709-limited"
+    },
+    "previewSha256": "ba4e4381d8b6d9dbc07b796acce289ce41502bca58eae4ed5ff65258b9b8e542",
+    "fingerprint": "0bc83208969547ba83c796fb923049b5de2af659e1a27716b6084b318fed4d49",
+    "decodedFrames": 48,
+    "encodedStatus": "pass",
+    "encodedLUFS": null,
+    "encodedTruePeakDBTP": null,
+    "renderDeterminism": "pass",
+    "matchStatus": "fail",
+    "maximum": {
+      "h": {
+        "error": 0.0,
+        "frame": 0
+      },
+      "w": {
+        "error": 0.0,
+        "frame": 0
+      },
+      "x": {
+        "error": 0.01875,
+        "frame": 0
+      },
+      "y": {
+        "error": 0.0,
+        "frame": 0
+      }
+    },
+    "perceptualReview": "unverified",
+    "userAcceptance": "unverified",
+    "finalExists": false
+  },
+  {
+    "project": "match-fixture",
+    "revision": "r002",
+    "mode": "match",
+    "output": {
+      "width": 160,
+      "height": 96,
+      "fps": {
+        "num": 24,
+        "den": 1
+      },
+      "frames": 48,
+      "colorPolicy": "srgb-to-bt709-limited"
+    },
+    "previewSha256": "92d54ae9e694d6f72b3fa8a50b2b0a00a5d7fa41ed10e314072baa99b43ef618",
+    "fingerprint": "501cd4b5f158a11e9b4f86b89edd18e3bead1eac037a5d064bfe4c35fda9e169",
+    "decodedFrames": 48,
+    "encodedStatus": "pass",
+    "encodedLUFS": null,
+    "encodedTruePeakDBTP": null,
+    "renderDeterminism": "pass",
+    "matchStatus": "pass",
+    "maximum": {
+      "h": {
+        "error": 0.0,
+        "frame": 0
+      },
+      "w": {
+        "error": 0.0,
+        "frame": 0
+      },
+      "x": {
+        "error": 0.0,
+        "frame": 0
+      },
+      "y": {
+        "error": 0.0,
+        "frame": 0
+      }
+    },
+    "perceptualReview": "unverified",
+    "userAcceptance": "unverified",
+    "finalExists": false
+  },
+  {
+    "project": "wave-sum",
+    "revision": "r001",
+    "mode": "create",
+    "output": {
+      "width": 480,
+      "height": 480,
+      "fps": {
+        "num": 30000,
+        "den": 1001
+      },
+      "frames": 120,
+      "colorPolicy": "srgb-to-bt709-limited"
+    },
+    "previewSha256": "77d1d44e89f2e806ff69f62b8c5a781d45af0b72e40c5b146e07a0e06aaaf5eb",
+    "fingerprint": "340a29e0040cf297dafa4c44999be71ebbde98dfa1779df76cb3d123aeeae74a",
+    "decodedFrames": 120,
+    "encodedStatus": "pass",
+    "encodedLUFS": -14.0,
+    "encodedTruePeakDBTP": -9.51,
+    "renderDeterminism": "pass",
+    "matchStatus": "not_applicable",
+    "maximum": null,
+    "perceptualReview": "unverified",
+    "userAcceptance": "unverified",
+    "finalExists": false
+  }
+]

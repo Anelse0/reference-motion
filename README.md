@@ -2,7 +2,13 @@
 
 一个本地、项目制的代码动效 Skill。`create` 从 brief 创作，`match` 从真实参考锁帧重建。画面默认 Canvas 2D，声音由项目自己的 Python 代码合成。工具只负责空画布协议、测量、信号原语、版本与媒体文件，不包含影片、运行骨架、风格、叙事槽位或配乐模板。
 
-本包交付 Skill、7 个命令行脚本、一个共享工具模块、依赖说明和工程测试。没有 SaaS、数据库、调度器、模型路由、Remotion 或审片应用。宿主使用其实际模型配置，无法取得模型身份时记录 `unknown`。
+本包交付 Skill、8 个命令行脚本、一个共享工具模块、依赖说明和工程测试。没有 SaaS、数据库、调度器、模型路由、Remotion 或审片应用。宿主使用其实际模型配置，无法取得模型身份时记录 `unknown`。
+
+## v0.2.0 变化
+
+本次迭代补齐 match 的测量与执行门槛：局部 MAD 峰值候选、颜色 ROI、墨迹/大写字高、逐帧模板追踪、多地标缩放/位移拟合、声音事件候选，以及绑定参考帧哈希的结构化 SPEC。每项明确 measured/reviewed/inferred/unknown，未知项只能进行限定帧诊断。完整制作必须先通过分析检查；最终导出还需关键对象逐帧误差、离散事件零帧误差和真实观看/听审证据。完整字段、命令和边界见 [match-analysis.md](references/match-analysis.md)。
+
+v0.1 快照与反馈保持原版本绑定；旧工具哈希禁止被新工具悄悄重跑。需补全分析后建立新快照，或使用旧版本工具复现。create 的空画布与程序化声音协议继续保留。
 
 ## 本次结果与限制
 
@@ -62,7 +68,7 @@ python3 scripts/encode.py --project /absolute/motion-workspace/projects/film-a -
 
 `96` 和示例帧号仅展示命令语法，须改成当前项目的总帧数和检查点。帧区间是 0-based `[0,N)`；fps 使用 `{num,den}`。只有内部效果采样可以为分数帧，不自动改变成片帧率。`timeline.json` 是共享事件时间的唯一数值来源。
 
-match 在建立真实合同后先运行 `python3 scripts/analyze.py --project P`，用 `measure.py track --help` 查看实际分割与跟踪选项，生产后运行 `python3 scripts/sync.py --project P --revision R --kind reference`。create 不抽取假参考或生成无意义的参考相似度。前后版本比较使用 `sync.py --project P --revision R --kind revision --before BEFORE.mp4 --after AFTER.mp4`，并清楚标为版本对照。对比视频为静音检查辅助，不拉伸较短版本，声音另外验收。
+match 在建立真实合同后先运行 `python3 scripts/analyze.py --project P`，用 `measure.py track --help` 查看实际分割与跟踪选项，按 [match-analysis.md](references/match-analysis.md) 完成分析并通过 `match.py gate` 后才可创建生产快照。编码 preview 后运行 `match.py verify --project P --revision R`，并运行 `python3 scripts/sync.py --project P --revision R --kind reference`。create 不抽取假参考或生成无意义的参考相似度。前后版本比较使用 `sync.py --project P --revision R --kind revision --before BEFORE.mp4 --after AFTER.mp4`，并清楚标为版本对照。对比视频为静音检查辅助，不拉伸较短版本，声音另外验收。
 
 每次外发审阅都绑定一个冻结 revision。渲染和合成只读取该 revision 的快照，拒绝悄悄复用不同来源的输出。修改工作源码后另建 r002。恢复命令会保留当前工作副本，并从历史产生新版本：
 

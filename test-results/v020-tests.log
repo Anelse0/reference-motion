@@ -1,0 +1,124 @@
+test_create_does_not_manufacture_reference (test_analysis_compare.AnalysisCompareTests) ... ok
+test_equivalent_rational_rates_are_not_false_mismatches (test_analysis_compare.AnalysisCompareTests) ... ok
+test_existing_evidence_cannot_be_replaced_or_partially_published (test_analysis_compare.AnalysisCompareTests) ... ok
+test_full_decode_original_pts_fractional_fps (test_analysis_compare.AnalysisCompareTests) ... ok
+test_maximum_per_axis_not_average_and_coverage (test_analysis_compare.AnalysisCompareTests) ... ok
+test_native_pair_never_scales_pixels (test_analysis_compare.AnalysisCompareTests) ... ok
+test_pending_match_init_analyzes_and_audio_entry_is_idempotent (test_analysis_compare.AnalysisCompareTests) ... ok
+test_reference_contract_mismatch_not_resampled (test_analysis_compare.AnalysisCompareTests) ... ok
+test_reject_hdr_rotation_non_square_metadata (test_analysis_compare.AnalysisCompareTests) ... ok
+test_reject_vfr_without_normalization (test_analysis_compare.AnalysisCompareTests) ... ok
+test_revision_duration_mismatch_is_labelled_without_stretch (test_analysis_compare.AnalysisCompareTests) ... ok
+test_track_measures_pixels_and_preserves_missing (test_analysis_compare.AnalysisCompareTests) ... ok
+test_unsigned_cut_difference_regression (test_analysis_compare.AnalysisCompareTests) ... ok
+test_actual_color_transfer (test_audio_encode.MediaIntegrationTests) ... ok
+test_actual_synthesis_and_encoding (test_audio_encode.MediaIntegrationTests) ... ok
+test_fake_or_stale_qa_cannot_promote (test_audio_encode.MediaIntegrationTests) ... ok
+test_frame_tamper_detected (test_audio_encode.MediaIntegrationTests) ... ok
+test_missing_qa_blocks_final (test_audio_encode.MediaIntegrationTests) ... ok
+test_normalized_master_has_exact_samples (test_audio_encode.MediaIntegrationTests) ... ok
+test_reference_check_cannot_be_omitted (test_audio_encode.MediaIntegrationTests) ... ok
+test_actual_color_transfer (test_audio_encode.RationalMediaIntegrationTests) ... ok
+test_actual_synthesis_and_encoding (test_audio_encode.RationalMediaIntegrationTests) ... ok
+test_fake_or_stale_qa_cannot_promote (test_audio_encode.RationalMediaIntegrationTests) ... ok
+test_frame_tamper_detected (test_audio_encode.RationalMediaIntegrationTests) ... ok
+test_missing_qa_blocks_final (test_audio_encode.RationalMediaIntegrationTests) ... ok
+test_normalized_master_has_exact_samples (test_audio_encode.RationalMediaIntegrationTests) ... ok
+test_reference_check_cannot_be_omitted (test_audio_encode.RationalMediaIntegrationTests) ... ok
+test_actual_alignment_detects_offset (test_audio_encode.SignalTests) ... ok
+test_band_limited_square (test_audio_encode.SignalTests) ... ok
+test_cue_measures_actual_onset_and_peak (test_audio_encode.SignalTests) ... ok
+test_envelope_and_delay_keep_tail (test_audio_encode.SignalTests) ... ok
+test_immutable_reports (test_audio_encode.SignalTests) ... ok
+test_import_file_audit (test_audio_encode.SignalTests) ... ok
+test_integrated_frequency_and_nyquist (test_audio_encode.SignalTests) ... ok
+test_late_tail_and_silent_cues_rejected (test_audio_encode.SignalTests) ... ok
+test_missing_required_event_rejected (test_audio_encode.SignalTests) ... ok
+test_noise_is_event_stable (test_audio_encode.SignalTests) ... ok
+test_numeric_failures_not_listening (test_audio_encode.SignalTests) ... ok
+test_rational_duration (test_audio_encode.SignalTests) ... ok
+test_stereo_anticorrelation_does_not_look_silent (test_audio_encode.SignalTests) ... ok
+test_delete_after_retract_upgrades_all_tombstones (test_lifecycle_regressions.LifecycleRegressionTests) ... ok
+test_delete_scrubs_copied_learning_in_internal_restore_backups (test_lifecycle_regressions.LifecycleRegressionTests) ... ok
+test_renderer_denies_output_symlink_before_launch_or_write (test_lifecycle_regressions.LifecycleRegressionTests) ... ok
+test_restore_collision_does_not_mutate_working_copy (test_lifecycle_regressions.LifecycleRegressionTests) ... ok
+test_workspace_memory_symlink_cannot_cross_boundary (test_lifecycle_regressions.LifecycleRegressionTests) ... ok
+test_changed_evidence_hash_blocks (test_match_analysis.GateTests) ... ok
+test_cut_candidate_needs_observed_classification (test_match_analysis.GateTests) ... ok
+test_discrete_locks_need_actual_artifact_bound_events (test_match_analysis.GateTests) ... ok
+test_foreign_reference_and_bad_index_block (test_match_analysis.GateTests) ... ok
+test_index_missing_hash_cannot_bind_missing_observation_hash (test_match_analysis.GateTests) ... ok
+test_missing_analysis_blocks_production_snapshot (test_match_analysis.GateTests) ... ok
+test_missing_component_frames_cannot_pass (test_match_analysis.GateTests) ... ok
+test_missing_ink_and_inferred_lock_do_not_pass (test_match_analysis.GateTests) ... ok
+test_not_applicable_is_not_blank_bypass (test_match_analysis.GateTests) ... ok
+test_old_restore_fails_before_working_copy_mutation (test_match_analysis.GateTests) ... ok
+test_ready_actual_fixture_and_frozen_analysis (test_match_analysis.GateTests) ... ok
+test_spec_writes_unknowns_and_never_overwrites (test_match_analysis.GateTests) ... ok
+test_template_window_size_is_not_measured_object_size (test_match_analysis.GateTests) ... ok
+test_timeline_mismatch_and_invalid_event_block (test_match_analysis.GateTests) ... ok
+test_unknown_is_probe_only_and_cannot_be_renamed_measured (test_match_analysis.GateTests) ... ok
+test_visual_coverage_is_not_inferred_from_frame_extraction (test_match_analysis.GateTests) ... ok
+test_probe_limits_render_and_encode (test_match_analysis.MatchWorkflowTests) ... ok
+test_real_match_failure_correction_and_final_gate (test_match_analysis.MatchWorkflowTests) ... ok
+test_actual_ink_bbox_and_missing (test_match_analysis.MeasurementTests) ... ok
+test_camera_fit_reports_residuals (test_match_analysis.MeasurementTests) ... ok
+test_degenerate_camera_rejected (test_match_analysis.MeasurementTests) ... ok
+test_flash_peak_is_only_candidate (test_match_analysis.MeasurementTests) ... ok
+test_flat_template_rejected (test_match_analysis.MeasurementTests) ... ok
+test_ink_roi_out_of_bounds (test_match_analysis.MeasurementTests) ... ok
+test_local_peaks_not_threshold_runs (test_match_analysis.MeasurementTests) ... ok
+test_low_contrast_peak_and_no_peak (test_match_analysis.MeasurementTests) ... ok
+test_template_ambiguity_and_occlusion_preserve_null (test_match_analysis.MeasurementTests) ... ok
+test_template_translation_and_luminance_invariance (test_match_analysis.MeasurementTests) ... ok
+test_compare_swap_conflict (test_project.ProjectTests) ... ok
+test_confirmed_requires_source (test_project.ProjectTests) ... ok
+test_cross_workspace_denied (test_project.ProjectTests) ... ok
+test_delete_derived_and_reactivation_blocked (test_project.ProjectTests) ... ok
+test_feedback_missing_reviewed_revision_and_false_acceptance (test_project.ProjectTests) ... ok
+test_forget_restore_no_revival (test_project.ProjectTests) ... ok
+test_half_open_gap_and_duplicate_anchors (test_project.ProjectTests) ... ok
+test_init_empty_without_template (test_project.ProjectTests) ... ok
+test_init_no_overwrite (test_project.ProjectTests) ... ok
+test_liking_not_capability_and_stale_code (test_project.ProjectTests) ... ok
+test_match_missing_ref (test_project.ProjectTests) ... ok
+test_path_escape_and_symlink (test_project.ProjectTests) ... ok
+test_rational_audio_duration (test_project.ProjectTests) ... ok
+test_render_rejects_pending (test_project.ProjectTests) ... ok
+test_scope_override_candidate_and_match_lock (test_project.ProjectTests) ... ok
+test_snapshot_frozen_and_modified_current_independent (test_project.ProjectTests) ... ok
+test_external_prepare_fetch_failure (test_renderer.RendererTests) ... ok
+test_fractional_out_of_bounds_and_no_fake_compare (test_renderer.RendererTests) ... ok
+test_missing_font_is_failure (test_renderer.RendererTests) ... ok
+test_missing_image_prepare_failure (test_renderer.RendererTests) ... ok
+test_random_draw_failure (test_renderer.RendererTests) ... ok
+test_reset_clip_state_and_repeated_order (test_renderer.RendererTests) ... ok
+test_stateful_module_failure (test_renderer.RendererTests) ... ok
+
+----------------------------------------------------------------------
+Ran 96 tests in 21.151s
+
+OK
+<TEMP_PATH>
+<TEMP_PATH>
+<TEMP_PATH>
+<TEMP_PATH>
+Inactive for future use; historical movies and separately scoped source feedback retained
+<TEMP_PATH>
+<TEMP_PATH>
+<TEMP_PATH>
+<TEMP_PATH>
+Inactive for future use; historical movies and separately scoped source feedback retained
+<TEMP_PATH>
+Working copy preserved at <TEMP_PATH>
+<TEMP_PATH>
+<TEMP_PATH>
+<TEMP_PATH>
+<TEMP_PATH>
+<TEMP_PATH>
+<TEMP_PATH>
+<TEMP_PATH>
+<TEMP_PATH>
+<TEMP_PATH>
+<TEMP_PATH>
+<TEMP_PATH>

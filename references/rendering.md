@@ -8,7 +8,7 @@ Frame environment fields are `outputFrame` (legal integer), `sampleFrame` (norma
 
 The browser exports `window.seekFrame(F)` after readiness. It only accepts integer output frames in `[0,N)`. Draw from absolute frame/time, fixed data, and fixed assets. Do not use wall-clock time, timers, unseeded randomness, CSS playback, a video's approximate seek, or previous frame state to determine pixels. A random-access frame must look the same as its sequential counterpart.
 
-The tool resets Canvas state and pixels before each frame; still pair component `save()`/`restore()` calls and begin paths deliberately. Keep exactly one owner for a continuous transition. Shared objects require explicit continuity, rather than accidentally restarting each shot.
+The main canvas requests `willReadFrequently:true` to avoid observed GPU-to-CPU readback switching between sampled frames; determinism checks still apply. The tool resets Canvas state and pixels before each frame; still pair component `save()`/`restore()` calls and begin paths deliberately. Keep exactly one owner for a continuous transition. Shared objects require explicit continuity, rather than accidentally restarting each shot.
 
 ## Time contract
 
@@ -31,3 +31,5 @@ For effects, preserve units. Pixels/frame is frame-rate and size dependent. Gaus
 Encode at the exact rational fps and declared color policy. Reject incompatible odd dimensions rather than cropping. Inspect the encoded video's decoded frame count, dimensions, effective time base and key pixels. Color conversion must actually transform RGB to limited-range BT.709, not merely add tags. PNG validation alone does not validate an MP4.
 
 The renderer serves only hash-listed modules and declared production assets through an intercepted virtual browser origin. It opens no HTTP server or listening port and rejects external requests. Chromium sandboxing stays enabled. Preparation and per-frame calls have a 30-second timeout. Production scripts reject changed tool hashes for a frozen snapshot: restore the matching tool version or explicitly create a new revision. Render run evidence is retained separately; identical full-frame retries do not rewrite the original summary.
+
+Match v0.2 measurement provenance, bounded probes and production/final gates are specified in [match-analysis.md](match-analysis.md). Fixed template bounds are not object size measurements.

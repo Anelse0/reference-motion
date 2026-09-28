@@ -1,0 +1,59 @@
+{
+  "cliHelp": [
+    {
+      "file": "scripts/analyze.py",
+      "returncode": 0,
+      "hasUsage": true
+    },
+    {
+      "file": "scripts/audio.py",
+      "returncode": 0,
+      "hasUsage": true
+    },
+    {
+      "file": "scripts/encode.py",
+      "returncode": 0,
+      "hasUsage": true
+    },
+    {
+      "file": "scripts/match.py",
+      "returncode": 0,
+      "hasUsage": true
+    },
+    {
+      "file": "scripts/measure.py",
+      "returncode": 0,
+      "hasUsage": true
+    },
+    {
+      "file": "scripts/project.py",
+      "returncode": 0,
+      "hasUsage": true
+    },
+    {
+      "file": "scripts/render.mjs",
+      "returncode": 0,
+      "hasUsage": false
+    },
+    {
+      "file": "scripts/sync.py",
+      "returncode": 0,
+      "hasUsage": true
+    }
+  ],
+  "pythonSyntax": "pass",
+  "skillFrontmatter": "manual stdlib validation passed; official PyYAML validator not run",
+  "skillAndDocLinks": 19,
+  "hostAutomaticDiscovery": "unverified",
+  "dependencyFreshInstall": "unverified",
+  "isolatedInstallSmoke": {
+    "status": "pass",
+    "cwd": "/private/tmp",
+    "operations": [
+      "create project init from install copy",
+      "match --help from install copy"
+    ],
+    "authoredRuntimeGenerated": false,
+    "note": "No global installation or automatic host loading claimed."
+  }
+}

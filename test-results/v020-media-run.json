@@ -1,0 +1,589 @@
+[
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/project.py",
+      "snapshot",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/packet-flow",
+      "--revision",
+      "r001"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "WORKSPACE/outputs/v020-test-workspace/projects/packet-flow/revisions/r001",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "WORKSPACE/outputs/reference-motion/scripts/render.mjs",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/packet-flow",
+      "--revision",
+      "r001",
+      "full",
+      "0",
+      "96"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\"frames\":96,\"output\":\"WORKSPACE/outputs/v020-test-workspace/projects/packet-flow/out/r001/frames\",\"report\":\"WORKSPACE/outputs/v020-test-workspace/projects/packet-flow/out/r001/review/render.json\",\"determinism\":\"pass\"}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/audio.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/packet-flow",
+      "--revision",
+      "r001",
+      "synth"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"failures\": [],\n  \"fingerprint\": \"9241433c9053e86624318b49828db295b2ae3bd39db248c56bdbf43f1db1ad49\",\n  \"masterSha256\": \"10013a42e37042dafda6f96580b89a7794fb790a318dd1dc6fccc546f25d221e\",\n  \"cuesSha256\": \"c5ad429eb58cb9549605fda0b51fd827ec790e7da9880e31fa8c1bef529d78c3\",\n  \"loudnessStatus\": \"pass\",\n  \"loudness\": {\n    \"input_i\": -14.4,\n    \"input_tp\": -1.46,\n    \"input_lra\": 2.3,\n    \"input_thresh\": -25.1,\n    \"output_i\": -13.19,\n    \"output_tp\": -1.0,\n    \"output_lra\": 1.9,\n    \"output_thresh\": -23.58,\n    \"normalization_type\": \"dynamic\",\n    \"target_offset\": -0.81\n  },\n  \"signal\": {\n    \"status\": \"pass\",\n    \"failures\": [],\n    \"samples\": 192000,\n    \"samplePeak\": 0.8453719615936279,\n    \"rms\": 0.09768908411003209,\n    \"dcOffset\": [\n      -4.676660179591365e-05,\n      -1.655079710062726e-05\n    ],\n    \"maxSampleJump\": 0.1324407458305359,\n    \"lastMillisecondPeak\": 0.0,\n    \"listening\": \"unverified\"\n  },\n  \"listening\": \"unverified\",\n  \"userAcceptance\": \"unverified\"\n}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/audio.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/packet-flow",
+      "--revision",
+      "r001",
+      "check"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"failures\": [],\n  \"fingerprint\": \"9241433c9053e86624318b49828db295b2ae3bd39db248c56bdbf43f1db1ad49\",\n  \"masterSha256\": \"10013a42e37042dafda6f96580b89a7794fb790a318dd1dc6fccc546f25d221e\",\n  \"cuesSha256\": \"c5ad429eb58cb9549605fda0b51fd827ec790e7da9880e31fa8c1bef529d78c3\",\n  \"loudnessStatus\": \"pass\",\n  \"loudness\": {\n    \"input_i\": -14.4,\n    \"input_tp\": -1.46,\n    \"input_lra\": 2.3,\n    \"input_thresh\": -25.1,\n    \"output_i\": -13.19,\n    \"output_tp\": -1.0,\n    \"output_lra\": 1.9,\n    \"output_thresh\": -23.58,\n    \"normalization_type\": \"dynamic\",\n    \"target_offset\": -0.81\n  },\n  \"signal\": {\n    \"status\": \"pass\",\n    \"failures\": [],\n    \"samples\": 192000,\n    \"samplePeak\": 0.8453719615936279,\n    \"rms\": 0.09768908411003209,\n    \"dcOffset\": [\n      -4.676660179591365e-05,\n      -1.655079710062726e-05\n    ],\n    \"maxSampleJump\": 0.1324407458305359,\n    \"lastMillisecondPeak\": 0.0,\n    \"listening\": \"unverified\"\n  },\n  \"listening\": \"unverified\",\n  \"userAcceptance\": \"unverified\"\n}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/measure.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/packet-flow",
+      "--revision",
+      "r001",
+      "check"
+    ],
+    "returncode": 2,
+    "expected": 0,
+    "stdout": "",
+    "stderr": "usage: measure.py [-h] {track,check} ...\nmeasure.py: error: argument operation: invalid choice: 'WORKSPACE/outputs/v020-test-workspace/projects/packet-flow' (choose from 'track', 'check')"
+  },
+  {
+    "command": [
+      "node",
+      "WORKSPACE/outputs/reference-motion/scripts/render.mjs",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/packet-flow",
+      "--revision",
+      "r001",
+      "full",
+      "0",
+      "96"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\"frames\":96,\"output\":\"WORKSPACE/outputs/v020-test-workspace/projects/packet-flow/out/r001/frames\",\"report\":\"WORKSPACE/outputs/v020-test-workspace/projects/packet-flow/out/r001/review/render.json\",\"determinism\":\"pass\"}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/audio.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/packet-flow",
+      "--revision",
+      "r001",
+      "synth"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"failures\": [],\n  \"fingerprint\": \"9241433c9053e86624318b49828db295b2ae3bd39db248c56bdbf43f1db1ad49\",\n  \"masterSha256\": \"10013a42e37042dafda6f96580b89a7794fb790a318dd1dc6fccc546f25d221e\",\n  \"cuesSha256\": \"c5ad429eb58cb9549605fda0b51fd827ec790e7da9880e31fa8c1bef529d78c3\",\n  \"loudnessStatus\": \"pass\",\n  \"loudness\": {\n    \"input_i\": -14.4,\n    \"input_tp\": -1.46,\n    \"input_lra\": 2.3,\n    \"input_thresh\": -25.1,\n    \"output_i\": -13.19,\n    \"output_tp\": -1.0,\n    \"output_lra\": 1.9,\n    \"output_thresh\": -23.58,\n    \"normalization_type\": \"dynamic\",\n    \"target_offset\": -0.81\n  },\n  \"signal\": {\n    \"status\": \"pass\",\n    \"failures\": [],\n    \"samples\": 192000,\n    \"samplePeak\": 0.8453719615936279,\n    \"rms\": 0.09768908411003209,\n    \"dcOffset\": [\n      -4.676660179591365e-05,\n      -1.655079710062726e-05\n    ],\n    \"maxSampleJump\": 0.1324407458305359,\n    \"lastMillisecondPeak\": 0.0,\n    \"listening\": \"unverified\"\n  },\n  \"listening\": \"unverified\",\n  \"userAcceptance\": \"unverified\"\n}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/audio.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/packet-flow",
+      "--revision",
+      "r001",
+      "check"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"failures\": [],\n  \"fingerprint\": \"9241433c9053e86624318b49828db295b2ae3bd39db248c56bdbf43f1db1ad49\",\n  \"masterSha256\": \"10013a42e37042dafda6f96580b89a7794fb790a318dd1dc6fccc546f25d221e\",\n  \"cuesSha256\": \"c5ad429eb58cb9549605fda0b51fd827ec790e7da9880e31fa8c1bef529d78c3\",\n  \"loudnessStatus\": \"pass\",\n  \"loudness\": {\n    \"input_i\": -14.4,\n    \"input_tp\": -1.46,\n    \"input_lra\": 2.3,\n    \"input_thresh\": -25.1,\n    \"output_i\": -13.19,\n    \"output_tp\": -1.0,\n    \"output_lra\": 1.9,\n    \"output_thresh\": -23.58,\n    \"normalization_type\": \"dynamic\",\n    \"target_offset\": -0.81\n  },\n  \"signal\": {\n    \"status\": \"pass\",\n    \"failures\": [],\n    \"samples\": 192000,\n    \"samplePeak\": 0.8453719615936279,\n    \"rms\": 0.09768908411003209,\n    \"dcOffset\": [\n      -4.676660179591365e-05,\n      -1.655079710062726e-05\n    ],\n    \"maxSampleJump\": 0.1324407458305359,\n    \"lastMillisecondPeak\": 0.0,\n    \"listening\": \"unverified\"\n  },\n  \"listening\": \"unverified\",\n  \"userAcceptance\": \"unverified\"\n}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/measure.py",
+      "check",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/packet-flow",
+      "--revision",
+      "r001"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\"report\": \"WORKSPACE/outputs/v020-test-workspace/projects/packet-flow/out/r001/review/measurements.json\", \"numericStatus\": \"unverified\", \"overallStatus\": \"unverified\"}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/encode.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/packet-flow",
+      "--revision",
+      "r001",
+      "--preview"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"failures\": [],\n  \"fingerprint\": \"9241433c9053e86624318b49828db295b2ae3bd39db248c56bdbf43f1db1ad49\",\n  \"artifactSha256\": \"940de481bddb5431c51ad19ca8cb66240414dbb5ba4c93196441f72d9d1bd33b\",\n  \"renderReportSha256\": \"0897e5f91f83096f2b61124cd4caf768a1c1de3c791304499a074fbf9d750d81\",\n  \"audioReportSha256\": \"add7984334232865046a75c0c936f34a9b56d925298fcfd3e8f079975a969fd3\",\n  \"toolSha256\": \"40afb5bb19facd2110da2f9403a94d6074c6f6b71a5a8d46047b393e268e6fd0\",\n  \"fullDecode\": \"pass\",\n  \"decodedFrames\": 96,\n  \"expectedFrames\": 96,\n  \"fps\": {\n    \"num\": 24,\n    \"den\": 1\n  },\n  \"videoStream\": {\n    \"index\": 0,\n    \"codec_name\": \"h264\",\n    \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n    \"profile\": \"High\",\n    \"codec_type\": \"video\",\n    \"codec_tag_string\": \"avc1\",\n    \"codec_tag\": \"0x31637661\",\n    \"mime_codec_string\": \"avc1.64001e\",\n    \"width\": 640,\n    \"height\": 360,\n    \"coded_width\": 640,\n    \"coded_height\": 360,\n    \"has_b_frames\": 2,\n    \"pix_fmt\": \"yuv420p\",\n    \"level\": 30,\n    \"color_range\": \"tv\",\n    \"color_space\": \"bt709\",\n    \"color_transfer\": \"bt709\",\n    \"color_primaries\": \"bt709\",\n    \"chroma_location\": \"left\",\n    \"field_order\": \"progressive\",\n    \"is_avc\": \"true\",\n    \"nal_length_size\": \"4\",\n    \"id\": \"0x1\",\n    \"r_frame_rate\": \"24/1\",\n    \"avg_frame_rate\": \"24/1\",\n    \"time_base\": \"1/24\",\n    \"start_pts\": 0,\n    \"start_time\": \"0.000000\",\n    \"duration_ts\": 96,\n    \"duration\": \"4.000000\",\n    \"bit_rate\": \"96794\",\n    \"bits_per_raw_sample\": \"8\",\n    \"nb_frames\": \"96\",\n    \"extradata_size\": 50,\n    \"disposition\": {\n      \"default\": 1,\n      \"dub\": 0,\n      \"original\": 0,\n      \"comment\": 0,\n      \"lyrics\": 0,\n      \"karaoke\": 0,\n      \"forced\": 0,\n      \"hearing_impaired\": 0,\n      \"visual_impaired\": 0,\n      \"clean_effects\": 0,\n      \"attached_pic\": 0,\n      \"timed_thumbnails\": 0,\n      \"non_diegetic\": 0,\n      \"captions\": 0,\n      \"descriptions\": 0,\n      \"metadata\": 0,\n      \"dependent\": 0,\n      \"still_image\": 0,\n      \"multilayer\": 0\n    },\n    \"tags\": {\n      \"language\": \"und\",\n      \"handler_name\": \"VideoHandler\",\n      \"encoder\": \"Lavc63.1.101 libx264\"\n    }\n  },\n  \"audioStream\": {\n    \"index\": 1,\n    \"codec_name\": \"aac\",\n    \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n    \"profile\": \"LC\",\n    \"codec_type\": \"audio\",\n    \"codec_tag_string\": \"mp4a\",\n    \"codec_tag\": \"0x6134706d\",\n    \"mime_codec_string\": \"mp4a.40.2\",\n    \"sample_fmt\": \"fltp\",\n    \"sample_rate\": \"48000\",\n    \"channels\": 2,\n    \"channel_layout\": \"stereo\",\n    \"bits_per_sample\": 0,\n    \"initial_padding\": 1024,\n    \"id\": \"0x2\",\n    \"r_frame_rate\": \"0/0\",\n    \"avg_frame_rate\": \"0/0\",\n    \"time_base\": \"1/48000\",\n    \"start_pts\": 0,\n    \"start_time\": \"0.000000\",\n    \"duration_ts\": 192000,\n    \"duration\": \"4.000000\",\n    \"bit_rate\": \"62876\",\n    \"nb_frames\": \"189\",\n    \"extradata_size\": 5,\n    \"disposition\": {\n      \"default\": 1,\n      \"dub\": 0,\n      \"original\": 0,\n      \"comment\": 0,\n      \"lyrics\": 0,\n      \"karaoke\": 0,\n      \"forced\": 0,\n      \"hearing_impaired\": 0,\n      \"visual_impaired\": 0,\n      \"clean_effects\": 0,\n      \"attached_pic\": 0,\n      \"timed_thumbnails\": 0,\n      \"non_diegetic\": 0,\n      \"captions\": 0,\n      \"descriptions\": 0,\n      \"metadata\": 0,\n      \"dependent\": 0,\n      \"still_image\": 0,\n      \"multilayer\": 0\n    },\n    \"tags\": {\n      \"language\": \"und\",\n      \"handler_name\": \"SoundHandler\"\n    }\n  },\n  \"audioSamples\": {\n    \"expected\": 192000,\n    \"effective\": 192000.0,\n    \"decoded\": 192000,\n    \"codecPadding\": 0,\n    \"analysisTrim\": [\n      0,\n      192000\n    ],\n    \"policy\": \"Container effective duration checked independently; codec padding excluded from signal analysis\"\n  },\n  \"audioAlignment\": {\n    \"status\": \"pass\",\n    \"measuredLagSamples\": 0,\n    \"correlation\": 0.999804531306237,\n    \"toleranceSamples\": 2000,\n    \"scope\": {\n      \"startSample\": 34003,\n      \"samples\": 52000,\n      \"channel\": 1\n    },\n    \"method\": \"Actual PCM cross-correlation near first activity; individual perceptual accents require listening\"\n  },\n  \"encodedCueAlignment\": [\n    {\n      \"status\": \"pass\",\n      \"measuredLagSamples\": 0,\n      \"correlation\": 0.9997886778015742,\n      \"toleranceSamples\": 2000,\n      \"scope\": {\n        \"startSample\": 2,\n        \"samples\": 14078,\n        \"channel\": 0\n      },\n      \"method\": \"Actual PCM cross-correlation near first activity; individual perceptual accents require listening\",\n      \"eventId\": \"routing-start\",\n      \"windowSamples\": [\n        34000,\n        48080\n      ],\n      \"plannedSample\": 36000,\n      \"estimatedDecodedAnchorSample\": 36003,\n      \"anchorErrorSamples\": 3\n    },\n    {\n      \"status\": \"pass\",\n      \"measuredLagSamples\": 0,\n      \"correlation\": 0.9999514504030098,\n      \"toleranceSamples\": 2000,\n      \"scope\": {\n        \"startSample\": 2,\n        \"samples\": 14078,\n        \"channel\": 0\n      },\n      \"method\": \"Actual PCM cross-correlation near first activity; individual perceptual accents require listening\",\n      \"eventId\": \"routing-middle\",\n      \"windowSamples\": [\n        86000,\n        100080\n      ],\n      \"plannedSample\": 88000,\n      \"estimatedDecodedAnchorSample\": 88002,\n      \"anchorErrorSamples\": 2\n    },\n    {\n      \"status\": \"pass\",\n      \"measuredLagSamples\": 0,\n      \"correlation\": 0.9999817586050491,\n      \"toleranceSamples\": 2000,\n      \"scope\": {\n        \"startSample\": 4,\n        \"samples\": 38556,\n        \"channel\": 1\n      },\n      \"method\": \"Actual PCM cross-correlation near first activity; individual perceptual accents require listening\",\n      \"eventId\": \"reassembled\",\n      \"windowSamples\": [\n        146000,\n        184560\n      ],\n      \"plannedSample\": 148000,\n      \"estimatedDecodedAnchorSample\": 148005,\n      \"anchorErrorSamples\": 5\n    }\n  ],\n  \"encodedLoudness\": {\n    \"input_i\": -14.4,\n    \"input_tp\": -1.41,\n    \"input_lra\": 2.3,\n    \"input_thresh\": -25.1,\n    \"output_i\": -13.18,\n    \"output_tp\": -1.0,\n    \"output_lra\": 1.8,\n    \"output_thresh\": -23.56,\n    \"normalization_type\": \"dynamic\",\n    \"target_offset\": -0.82\n  },\n  \"loudnessStatus\": \"pass\",\n  \"signal\": {\n    \"status\": \"pass\",\n    \"failures\": [],\n    \"samples\": 192000,\n    \"samplePeak\": 0.849966287612915,\n    \"rms\": 0.09769275485424027,\n    \"dcOffset\": [\n      -4.80092672885937e-05,\n      -3.4536665951179456e-08\n    ],\n    \"maxSampleJump\": 0.13017763197422028,\n    \"lastMillisecondPeak\": 0.0,\n    \"listening\": \"unverified\"\n  },\n  \"perceptualReview\": \"unverified\",\n  \"userAcceptance\": \"unverified\",\n  \"colorConversion\": \"scale to full-range BT.709-matrix YUV444p12; colorspace converts sRGB transfer to BT.709 limited YUV420p\",\n  \"ffmpeg\": \"ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers\"\n}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/encode.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/packet-flow",
+      "--revision",
+      "r001",
+      "--final"
+    ],
+    "returncode": 1,
+    "expected": 1,
+    "stdout": "",
+    "stderr": "ERROR: [Errno 2] No such file or directory: 'WORKSPACE/outputs/v020-test-workspace/projects/packet-flow/out/r001/review/qa.json'"
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/project.py",
+      "snapshot",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/wave-sum",
+      "--revision",
+      "r001"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "WORKSPACE/outputs/v020-test-workspace/projects/wave-sum/revisions/r001",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "WORKSPACE/outputs/reference-motion/scripts/render.mjs",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/wave-sum",
+      "--revision",
+      "r001",
+      "full",
+      "0",
+      "120"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\"frames\":120,\"output\":\"WORKSPACE/outputs/v020-test-workspace/projects/wave-sum/out/r001/frames\",\"report\":\"WORKSPACE/outputs/v020-test-workspace/projects/wave-sum/out/r001/review/render.json\",\"determinism\":\"pass\"}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/audio.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/wave-sum",
+      "--revision",
+      "r001",
+      "synth"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"failures\": [],\n  \"fingerprint\": \"340a29e0040cf297dafa4c44999be71ebbde98dfa1779df76cb3d123aeeae74a\",\n  \"masterSha256\": \"bf4ac2b92080ac2425bfea4e350f9fb748d1e932a3baf73dac337080d29a5e3e\",\n  \"cuesSha256\": \"9ed15316fce6442fc5d7e87c3a8c0f194fecfe1908b7d40e044f5361615500cb\",\n  \"loudnessStatus\": \"pass\",\n  \"loudness\": {\n    \"input_i\": -14.0,\n    \"input_tp\": -9.51,\n    \"input_lra\": 0.8,\n    \"input_thresh\": -24.0,\n    \"output_i\": -13.71,\n    \"output_tp\": -9.04,\n    \"output_lra\": 0.7,\n    \"output_thresh\": -23.71,\n    \"normalization_type\": \"dynamic\",\n    \"target_offset\": -0.29\n  },\n  \"signal\": {\n    \"status\": \"pass\",\n    \"failures\": [],\n    \"samples\": 192192,\n    \"samplePeak\": 0.33451709151268005,\n    \"rms\": 0.15070665629632246,\n    \"dcOffset\": [\n      -4.286002010191448e-08,\n      -4.286002010191448e-08\n    ],\n    \"maxSampleJump\": 0.009719582099933177,\n    \"lastMillisecondPeak\": 2.973646360260318e-06,\n    \"listening\": \"unverified\"\n  },\n  \"listening\": \"unverified\",\n  \"userAcceptance\": \"unverified\"\n}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/audio.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/wave-sum",
+      "--revision",
+      "r001",
+      "check"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"failures\": [],\n  \"fingerprint\": \"340a29e0040cf297dafa4c44999be71ebbde98dfa1779df76cb3d123aeeae74a\",\n  \"masterSha256\": \"bf4ac2b92080ac2425bfea4e350f9fb748d1e932a3baf73dac337080d29a5e3e\",\n  \"cuesSha256\": \"9ed15316fce6442fc5d7e87c3a8c0f194fecfe1908b7d40e044f5361615500cb\",\n  \"loudnessStatus\": \"pass\",\n  \"loudness\": {\n    \"input_i\": -14.0,\n    \"input_tp\": -9.51,\n    \"input_lra\": 0.8,\n    \"input_thresh\": -24.0,\n    \"output_i\": -13.71,\n    \"output_tp\": -9.04,\n    \"output_lra\": 0.7,\n    \"output_thresh\": -23.71,\n    \"normalization_type\": \"dynamic\",\n    \"target_offset\": -0.29\n  },\n  \"signal\": {\n    \"status\": \"pass\",\n    \"failures\": [],\n    \"samples\": 192192,\n    \"samplePeak\": 0.33451709151268005,\n    \"rms\": 0.15070665629632246,\n    \"dcOffset\": [\n      -4.286002010191448e-08,\n      -4.286002010191448e-08\n    ],\n    \"maxSampleJump\": 0.009719582099933177,\n    \"lastMillisecondPeak\": 2.973646360260318e-06,\n    \"listening\": \"unverified\"\n  },\n  \"listening\": \"unverified\",\n  \"userAcceptance\": \"unverified\"\n}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/measure.py",
+      "check",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/wave-sum",
+      "--revision",
+      "r001"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\"report\": \"WORKSPACE/outputs/v020-test-workspace/projects/wave-sum/out/r001/review/measurements.json\", \"numericStatus\": \"unverified\", \"overallStatus\": \"unverified\"}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/encode.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/wave-sum",
+      "--revision",
+      "r001",
+      "--preview"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"failures\": [],\n  \"fingerprint\": \"340a29e0040cf297dafa4c44999be71ebbde98dfa1779df76cb3d123aeeae74a\",\n  \"artifactSha256\": \"77d1d44e89f2e806ff69f62b8c5a781d45af0b72e40c5b146e07a0e06aaaf5eb\",\n  \"renderReportSha256\": \"f2f13843cdbe4daa1daf1d249053058c4b36e084df123a6638a97728636408ab\",\n  \"audioReportSha256\": \"396ae0dfd1af7170171ee8d25ec9d2e08a4a5bc8a585f59a3ee9a7be614d17d8\",\n  \"toolSha256\": \"40afb5bb19facd2110da2f9403a94d6074c6f6b71a5a8d46047b393e268e6fd0\",\n  \"fullDecode\": \"pass\",\n  \"decodedFrames\": 120,\n  \"expectedFrames\": 120,\n  \"fps\": {\n    \"num\": 30000,\n    \"den\": 1001\n  },\n  \"videoStream\": {\n    \"index\": 0,\n    \"codec_name\": \"h264\",\n    \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n    \"profile\": \"High\",\n    \"codec_type\": \"video\",\n    \"codec_tag_string\": \"avc1\",\n    \"codec_tag\": \"0x31637661\",\n    \"mime_codec_string\": \"avc1.64001e\",\n    \"width\": 480,\n    \"height\": 480,\n    \"coded_width\": 480,\n    \"coded_height\": 480,\n    \"has_b_frames\": 2,\n    \"pix_fmt\": \"yuv420p\",\n    \"level\": 30,\n    \"color_range\": \"tv\",\n    \"color_space\": \"bt709\",\n    \"color_transfer\": \"bt709\",\n    \"color_primaries\": \"bt709\",\n    \"chroma_location\": \"left\",\n    \"field_order\": \"progressive\",\n    \"is_avc\": \"true\",\n    \"nal_length_size\": \"4\",\n    \"id\": \"0x1\",\n    \"r_frame_rate\": \"30000/1001\",\n    \"avg_frame_rate\": \"30000/1001\",\n    \"time_base\": \"1/30000\",\n    \"start_pts\": 0,\n    \"start_time\": \"0.000000\",\n    \"duration_ts\": 120120,\n    \"duration\": \"4.004000\",\n    \"bit_rate\": \"422467\",\n    \"bits_per_raw_sample\": \"8\",\n    \"nb_frames\": \"120\",\n    \"extradata_size\": 47,\n    \"disposition\": {\n      \"default\": 1,\n      \"dub\": 0,\n      \"original\": 0,\n      \"comment\": 0,\n      \"lyrics\": 0,\n      \"karaoke\": 0,\n      \"forced\": 0,\n      \"hearing_impaired\": 0,\n      \"visual_impaired\": 0,\n      \"clean_effects\": 0,\n      \"attached_pic\": 0,\n      \"timed_thumbnails\": 0,\n      \"non_diegetic\": 0,\n      \"captions\": 0,\n      \"descriptions\": 0,\n      \"metadata\": 0,\n      \"dependent\": 0,\n      \"still_image\": 0,\n      \"multilayer\": 0\n    },\n    \"tags\": {\n      \"language\": \"und\",\n      \"handler_name\": \"VideoHandler\",\n      \"encoder\": \"Lavc63.1.101 libx264\"\n    }\n  },\n  \"audioStream\": {\n    \"index\": 1,\n    \"codec_name\": \"aac\",\n    \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n    \"profile\": \"LC\",\n    \"codec_type\": \"audio\",\n    \"codec_tag_string\": \"mp4a\",\n    \"codec_tag\": \"0x6134706d\",\n    \"mime_codec_string\": \"mp4a.40.2\",\n    \"sample_fmt\": \"fltp\",\n    \"sample_rate\": \"48000\",\n    \"channels\": 2,\n    \"channel_layout\": \"stereo\",\n    \"bits_per_sample\": 0,\n    \"initial_padding\": 1024,\n    \"id\": \"0x2\",\n    \"r_frame_rate\": \"0/0\",\n    \"avg_frame_rate\": \"0/0\",\n    \"time_base\": \"1/48000\",\n    \"start_pts\": 0,\n    \"start_time\": \"0.000000\",\n    \"duration_ts\": 192192,\n    \"duration\": \"4.004000\",\n    \"bit_rate\": \"147690\",\n    \"nb_frames\": \"189\",\n    \"extradata_size\": 5,\n    \"disposition\": {\n      \"default\": 1,\n      \"dub\": 0,\n      \"original\": 0,\n      \"comment\": 0,\n      \"lyrics\": 0,\n      \"karaoke\": 0,\n      \"forced\": 0,\n      \"hearing_impaired\": 0,\n      \"visual_impaired\": 0,\n      \"clean_effects\": 0,\n      \"attached_pic\": 0,\n      \"timed_thumbnails\": 0,\n      \"non_diegetic\": 0,\n      \"captions\": 0,\n      \"descriptions\": 0,\n      \"metadata\": 0,\n      \"dependent\": 0,\n      \"still_image\": 0,\n      \"multilayer\": 0\n    },\n    \"tags\": {\n      \"language\": \"und\",\n      \"handler_name\": \"SoundHandler\"\n    }\n  },\n  \"audioSamples\": {\n    \"expected\": 192192,\n    \"effective\": 192192.0,\n    \"decoded\": 192192,\n    \"codecPadding\": 0,\n    \"analysisTrim\": [\n      0,\n      192192\n    ],\n    \"policy\": \"Container effective duration checked independently; codec padding excluded from signal analysis\"\n  },\n  \"audioAlignment\": {\n    \"status\": \"pass\",\n    \"measuredLagSamples\": 0,\n    \"correlation\": 0.9999784596148258,\n    \"toleranceSamples\": 1601,\n    \"scope\": {\n      \"startSample\": 0,\n      \"samples\": 51202,\n      \"channel\": 0\n    },\n    \"method\": \"Actual PCM cross-correlation near first activity; individual perceptual accents require listening\"\n  },\n  \"encodedCueAlignment\": [\n    {\n      \"status\": \"pass\",\n      \"measuredLagSamples\": 0,\n      \"correlation\": 0.9999784596148258,\n      \"toleranceSamples\": 1601,\n      \"scope\": {\n        \"startSample\": 0,\n        \"samples\": 51202,\n        \"channel\": 0\n      },\n      \"method\": \"Actual PCM cross-correlation near first activity; individual perceptual accents require listening\",\n      \"eventId\": \"first-tone\",\n      \"windowSamples\": [\n        0,\n        192192\n      ],\n      \"plannedSample\": 0,\n      \"estimatedDecodedAnchorSample\": 17,\n      \"anchorErrorSamples\": 17\n    },\n    {\n      \"status\": \"pass\",\n      \"measuredLagSamples\": 0,\n      \"correlation\": 0.9999996944712007,\n      \"toleranceSamples\": 1601,\n      \"scope\": {\n        \"startSample\": 0,\n        \"samples\": 51202,\n        \"channel\": 0\n      },\n      \"method\": \"Actual PCM cross-correlation near first activity; individual perceptual accents require listening\",\n      \"eventId\": \"second-tone\",\n      \"windowSamples\": [\n        46447,\n        192192\n      ],\n      \"plannedSample\": 48048,\n      \"estimatedDecodedAnchorSample\": 48104,\n      \"anchorErrorSamples\": 56\n    }\n  ],\n  \"encodedLoudness\": {\n    \"input_i\": -14.0,\n    \"input_tp\": -9.51,\n    \"input_lra\": 0.8,\n    \"input_thresh\": -24.0,\n    \"output_i\": -13.72,\n    \"output_tp\": -9.04,\n    \"output_lra\": 0.7,\n    \"output_thresh\": -23.72,\n    \"normalization_type\": \"dynamic\",\n    \"target_offset\": -0.28\n  },\n  \"loudnessStatus\": \"pass\",\n  \"signal\": {\n    \"status\": \"pass\",\n    \"failures\": [],\n    \"samples\": 192192,\n    \"samplePeak\": 0.33461353182792664,\n    \"rms\": 0.1506773475472775,\n    \"dcOffset\": [\n      9.255952548896994e-07,\n      9.255952548896994e-07\n    ],\n    \"maxSampleJump\": 0.009723034512717277,\n    \"lastMillisecondPeak\": 4.796484518010402e-06,\n    \"listening\": \"unverified\"\n  },\n  \"perceptualReview\": \"unverified\",\n  \"userAcceptance\": \"unverified\",\n  \"colorConversion\": \"scale to full-range BT.709-matrix YUV444p12; colorspace converts sRGB transfer to BT.709 limited YUV420p\",\n  \"ffmpeg\": \"ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers\"\n}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/encode.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/wave-sum",
+      "--revision",
+      "r001",
+      "--final"
+    ],
+    "returncode": 1,
+    "expected": 1,
+    "stdout": "",
+    "stderr": "ERROR: [Errno 2] No such file or directory: 'WORKSPACE/outputs/v020-test-workspace/projects/wave-sum/out/r001/review/qa.json'"
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/project.py",
+      "snapshot",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r001"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture/revisions/r001",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "WORKSPACE/outputs/reference-motion/scripts/render.mjs",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r001",
+      "full",
+      "0",
+      "48"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\"frames\":48,\"output\":\"WORKSPACE/outputs/v020-test-workspace/projects/match-fixture/out/r001/frames\",\"report\":\"WORKSPACE/outputs/v020-test-workspace/projects/match-fixture/out/r001/review/render.json\",\"determinism\":\"pass\"}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/audio.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r001",
+      "synth"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"failures\": [],\n  \"fingerprint\": \"0bc83208969547ba83c796fb923049b5de2af659e1a27716b6084b318fed4d49\",\n  \"masterSha256\": \"71ca62e6c7ac2a96426cc9a27b754dc0676a932a8561dfefdf5ef7b44738934d\",\n  \"cuesSha256\": \"d1bcdebffaa86ea7347e354a1542fb36dc2ed51a5df7e7b9cb69dc65126c6ced\",\n  \"loudnessStatus\": \"not_applicable\",\n  \"loudness\": {\n    \"input_i\": null,\n    \"input_tp\": null,\n    \"input_lra\": 0.0,\n    \"input_thresh\": -70.0,\n    \"output_i\": null,\n    \"output_tp\": null,\n    \"output_lra\": 0.0,\n    \"output_thresh\": -70.0,\n    \"normalization_type\": \"linear\",\n    \"target_offset\": null\n  },\n  \"signal\": {\n    \"status\": \"pass\",\n    \"failures\": [],\n    \"samples\": 96000,\n    \"samplePeak\": 0.0,\n    \"rms\": 0.0,\n    \"dcOffset\": [\n      0.0,\n      0.0\n    ],\n    \"maxSampleJump\": 0.0,\n    \"lastMillisecondPeak\": 0.0,\n    \"listening\": \"unverified\"\n  },\n  \"listening\": \"unverified\",\n  \"userAcceptance\": \"unverified\"\n}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/audio.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r001",
+      "check"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"failures\": [],\n  \"fingerprint\": \"0bc83208969547ba83c796fb923049b5de2af659e1a27716b6084b318fed4d49\",\n  \"masterSha256\": \"71ca62e6c7ac2a96426cc9a27b754dc0676a932a8561dfefdf5ef7b44738934d\",\n  \"cuesSha256\": \"d1bcdebffaa86ea7347e354a1542fb36dc2ed51a5df7e7b9cb69dc65126c6ced\",\n  \"loudnessStatus\": \"not_applicable\",\n  \"loudness\": {\n    \"input_i\": null,\n    \"input_tp\": null,\n    \"input_lra\": 0.0,\n    \"input_thresh\": -70.0,\n    \"output_i\": null,\n    \"output_tp\": null,\n    \"output_lra\": 0.0,\n    \"output_thresh\": -70.0,\n    \"normalization_type\": \"linear\",\n    \"target_offset\": null\n  },\n  \"signal\": {\n    \"status\": \"pass\",\n    \"failures\": [],\n    \"samples\": 96000,\n    \"samplePeak\": 0.0,\n    \"rms\": 0.0,\n    \"dcOffset\": [\n      0.0,\n      0.0\n    ],\n    \"maxSampleJump\": 0.0,\n    \"lastMillisecondPeak\": 0.0,\n    \"listening\": \"unverified\"\n  },\n  \"listening\": \"unverified\",\n  \"userAcceptance\": \"unverified\"\n}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/measure.py",
+      "check",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r001"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\"report\": \"WORKSPACE/outputs/v020-test-workspace/projects/match-fixture/out/r001/review/measurements.json\", \"numericStatus\": \"unverified\", \"overallStatus\": \"unverified\"}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/encode.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r001",
+      "--preview"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"failures\": [],\n  \"fingerprint\": \"0bc83208969547ba83c796fb923049b5de2af659e1a27716b6084b318fed4d49\",\n  \"artifactSha256\": \"ba4e4381d8b6d9dbc07b796acce289ce41502bca58eae4ed5ff65258b9b8e542\",\n  \"renderReportSha256\": \"db3b63b14f8a41361cd5fb4d9b51da609e0073952acdcdaf94e071ff6d860023\",\n  \"audioReportSha256\": \"88e064b313b59b445cec3e145b763eda9cf5ad7e4ac2f2ff290d193e90a1fea8\",\n  \"toolSha256\": \"40afb5bb19facd2110da2f9403a94d6074c6f6b71a5a8d46047b393e268e6fd0\",\n  \"fullDecode\": \"pass\",\n  \"decodedFrames\": 48,\n  \"expectedFrames\": 48,\n  \"fps\": {\n    \"num\": 24,\n    \"den\": 1\n  },\n  \"videoStream\": {\n    \"index\": 0,\n    \"codec_name\": \"h264\",\n    \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n    \"profile\": \"High\",\n    \"codec_type\": \"video\",\n    \"codec_tag_string\": \"avc1\",\n    \"codec_tag\": \"0x31637661\",\n    \"mime_codec_string\": \"avc1.64000a\",\n    \"width\": 160,\n    \"height\": 96,\n    \"coded_width\": 160,\n    \"coded_height\": 96,\n    \"has_b_frames\": 2,\n    \"pix_fmt\": \"yuv420p\",\n    \"level\": 10,\n    \"color_range\": \"tv\",\n    \"color_space\": \"bt709\",\n    \"color_transfer\": \"bt709\",\n    \"color_primaries\": \"bt709\",\n    \"chroma_location\": \"left\",\n    \"field_order\": \"progressive\",\n    \"is_avc\": \"true\",\n    \"nal_length_size\": \"4\",\n    \"id\": \"0x1\",\n    \"r_frame_rate\": \"24/1\",\n    \"avg_frame_rate\": \"24/1\",\n    \"time_base\": \"1/24\",\n    \"start_pts\": 0,\n    \"start_time\": \"0.000000\",\n    \"duration_ts\": 48,\n    \"duration\": \"2.000000\",\n    \"bit_rate\": \"8280\",\n    \"bits_per_raw_sample\": \"8\",\n    \"nb_frames\": \"48\",\n    \"extradata_size\": 48,\n    \"disposition\": {\n      \"default\": 1,\n      \"dub\": 0,\n      \"original\": 0,\n      \"comment\": 0,\n      \"lyrics\": 0,\n      \"karaoke\": 0,\n      \"forced\": 0,\n      \"hearing_impaired\": 0,\n      \"visual_impaired\": 0,\n      \"clean_effects\": 0,\n      \"attached_pic\": 0,\n      \"timed_thumbnails\": 0,\n      \"non_diegetic\": 0,\n      \"captions\": 0,\n      \"descriptions\": 0,\n      \"metadata\": 0,\n      \"dependent\": 0,\n      \"still_image\": 0,\n      \"multilayer\": 0\n    },\n    \"tags\": {\n      \"language\": \"und\",\n      \"handler_name\": \"VideoHandler\",\n      \"encoder\": \"Lavc63.1.101 libx264\"\n    }\n  },\n  \"audioStream\": {\n    \"index\": 1,\n    \"codec_name\": \"aac\",\n    \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n    \"profile\": \"LC\",\n    \"codec_type\": \"audio\",\n    \"codec_tag_string\": \"mp4a\",\n    \"codec_tag\": \"0x6134706d\",\n    \"mime_codec_string\": \"mp4a.40.2\",\n    \"sample_fmt\": \"fltp\",\n    \"sample_rate\": \"48000\",\n    \"channels\": 2,\n    \"channel_layout\": \"stereo\",\n    \"bits_per_sample\": 0,\n    \"initial_padding\": 1024,\n    \"id\": \"0x2\",\n    \"r_frame_rate\": \"0/0\",\n    \"avg_frame_rate\": \"0/0\",\n    \"time_base\": \"1/48000\",\n    \"start_pts\": 0,\n    \"start_time\": \"0.000000\",\n    \"duration_ts\": 96000,\n    \"duration\": \"2.000000\",\n    \"bit_rate\": \"2315\",\n    \"nb_frames\": \"95\",\n    \"extradata_size\": 5,\n    \"disposition\": {\n      \"default\": 1,\n      \"dub\": 0,\n      \"original\": 0,\n      \"comment\": 0,\n      \"lyrics\": 0,\n      \"karaoke\": 0,\n      \"forced\": 0,\n      \"hearing_impaired\": 0,\n      \"visual_impaired\": 0,\n      \"clean_effects\": 0,\n      \"attached_pic\": 0,\n      \"timed_thumbnails\": 0,\n      \"non_diegetic\": 0,\n      \"captions\": 0,\n      \"descriptions\": 0,\n      \"metadata\": 0,\n      \"dependent\": 0,\n      \"still_image\": 0,\n      \"multilayer\": 0\n    },\n    \"tags\": {\n      \"language\": \"und\",\n      \"handler_name\": \"SoundHandler\"\n    }\n  },\n  \"audioSamples\": {\n    \"expected\": 96000,\n    \"effective\": 96000.0,\n    \"decoded\": 96000,\n    \"codecPadding\": 0,\n    \"analysisTrim\": [\n      0,\n      96000\n    ],\n    \"policy\": \"Container effective duration checked independently; codec padding excluded from signal analysis\"\n  },\n  \"audioAlignment\": {\n    \"status\": \"not_applicable\",\n    \"reason\": \"Silent source\"\n  },\n  \"encodedCueAlignment\": [],\n  \"encodedLoudness\": {\n    \"input_i\": null,\n    \"input_tp\": null,\n    \"input_lra\": 0.0,\n    \"input_thresh\": -70.0,\n    \"output_i\": null,\n    \"output_tp\": null,\n    \"output_lra\": 0.0,\n    \"output_thresh\": -70.0,\n    \"normalization_type\": \"linear\",\n    \"target_offset\": null\n  },\n  \"loudnessStatus\": \"not_applicable\",\n  \"signal\": {\n    \"status\": \"pass\",\n    \"failures\": [],\n    \"samples\": 96000,\n    \"samplePeak\": 0.0,\n    \"rms\": 0.0,\n    \"dcOffset\": [\n      0.0,\n      0.0\n    ],\n    \"maxSampleJump\": 0.0,\n    \"lastMillisecondPeak\": 0.0,\n    \"listening\": \"unverified\"\n  },\n  \"perceptualReview\": \"unverified\",\n  \"userAcceptance\": \"unverified\",\n  \"colorConversion\": \"scale to full-range BT.709-matrix YUV444p12; colorspace converts sRGB transfer to BT.709 limited YUV420p\",\n  \"ffmpeg\": \"ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers\"\n}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/match.py",
+      "verify",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r001"
+    ],
+    "returncode": 1,
+    "expected": 1,
+    "stdout": "{\"status\": \"fail\", \"numericStatus\": \"fail\", \"events\": \"not_applicable\"}",
+    "stderr": "ERROR: Match verification did not pass; retain preview and evidence"
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/encode.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r001",
+      "--final"
+    ],
+    "returncode": 1,
+    "expected": 1,
+    "stdout": "",
+    "stderr": "ERROR: Current artifact-bound match verification required"
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/project.py",
+      "snapshot",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r002"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture/revisions/r002",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "WORKSPACE/outputs/reference-motion/scripts/render.mjs",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r002",
+      "full",
+      "0",
+      "48"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\"frames\":48,\"output\":\"WORKSPACE/outputs/v020-test-workspace/projects/match-fixture/out/r002/frames\",\"report\":\"WORKSPACE/outputs/v020-test-workspace/projects/match-fixture/out/r002/review/render.json\",\"determinism\":\"pass\"}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/audio.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r002",
+      "synth"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"failures\": [],\n  \"fingerprint\": \"501cd4b5f158a11e9b4f86b89edd18e3bead1eac037a5d064bfe4c35fda9e169\",\n  \"masterSha256\": \"71ca62e6c7ac2a96426cc9a27b754dc0676a932a8561dfefdf5ef7b44738934d\",\n  \"cuesSha256\": \"d1bcdebffaa86ea7347e354a1542fb36dc2ed51a5df7e7b9cb69dc65126c6ced\",\n  \"loudnessStatus\": \"not_applicable\",\n  \"loudness\": {\n    \"input_i\": null,\n    \"input_tp\": null,\n    \"input_lra\": 0.0,\n    \"input_thresh\": -70.0,\n    \"output_i\": null,\n    \"output_tp\": null,\n    \"output_lra\": 0.0,\n    \"output_thresh\": -70.0,\n    \"normalization_type\": \"linear\",\n    \"target_offset\": null\n  },\n  \"signal\": {\n    \"status\": \"pass\",\n    \"failures\": [],\n    \"samples\": 96000,\n    \"samplePeak\": 0.0,\n    \"rms\": 0.0,\n    \"dcOffset\": [\n      0.0,\n      0.0\n    ],\n    \"maxSampleJump\": 0.0,\n    \"lastMillisecondPeak\": 0.0,\n    \"listening\": \"unverified\"\n  },\n  \"listening\": \"unverified\",\n  \"userAcceptance\": \"unverified\"\n}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/audio.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r002",
+      "check"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"failures\": [],\n  \"fingerprint\": \"501cd4b5f158a11e9b4f86b89edd18e3bead1eac037a5d064bfe4c35fda9e169\",\n  \"masterSha256\": \"71ca62e6c7ac2a96426cc9a27b754dc0676a932a8561dfefdf5ef7b44738934d\",\n  \"cuesSha256\": \"d1bcdebffaa86ea7347e354a1542fb36dc2ed51a5df7e7b9cb69dc65126c6ced\",\n  \"loudnessStatus\": \"not_applicable\",\n  \"loudness\": {\n    \"input_i\": null,\n    \"input_tp\": null,\n    \"input_lra\": 0.0,\n    \"input_thresh\": -70.0,\n    \"output_i\": null,\n    \"output_tp\": null,\n    \"output_lra\": 0.0,\n    \"output_thresh\": -70.0,\n    \"normalization_type\": \"linear\",\n    \"target_offset\": null\n  },\n  \"signal\": {\n    \"status\": \"pass\",\n    \"failures\": [],\n    \"samples\": 96000,\n    \"samplePeak\": 0.0,\n    \"rms\": 0.0,\n    \"dcOffset\": [\n      0.0,\n      0.0\n    ],\n    \"maxSampleJump\": 0.0,\n    \"lastMillisecondPeak\": 0.0,\n    \"listening\": \"unverified\"\n  },\n  \"listening\": \"unverified\",\n  \"userAcceptance\": \"unverified\"\n}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/measure.py",
+      "check",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r002"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\"report\": \"WORKSPACE/outputs/v020-test-workspace/projects/match-fixture/out/r002/review/measurements.json\", \"numericStatus\": \"unverified\", \"overallStatus\": \"unverified\"}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/encode.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r002",
+      "--preview"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"failures\": [],\n  \"fingerprint\": \"501cd4b5f158a11e9b4f86b89edd18e3bead1eac037a5d064bfe4c35fda9e169\",\n  \"artifactSha256\": \"92d54ae9e694d6f72b3fa8a50b2b0a00a5d7fa41ed10e314072baa99b43ef618\",\n  \"renderReportSha256\": \"75f8bd471b2328051142e6a919826f53b4462a2b82abe4a8cef6cd0a327ac976\",\n  \"audioReportSha256\": \"a47c2d8837ef6052308ca0cbeb846a1516619a618dd2594e77f2f1b4047080f1\",\n  \"toolSha256\": \"40afb5bb19facd2110da2f9403a94d6074c6f6b71a5a8d46047b393e268e6fd0\",\n  \"fullDecode\": \"pass\",\n  \"decodedFrames\": 48,\n  \"expectedFrames\": 48,\n  \"fps\": {\n    \"num\": 24,\n    \"den\": 1\n  },\n  \"videoStream\": {\n    \"index\": 0,\n    \"codec_name\": \"h264\",\n    \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n    \"profile\": \"High\",\n    \"codec_type\": \"video\",\n    \"codec_tag_string\": \"avc1\",\n    \"codec_tag\": \"0x31637661\",\n    \"mime_codec_string\": \"avc1.64000a\",\n    \"width\": 160,\n    \"height\": 96,\n    \"coded_width\": 160,\n    \"coded_height\": 96,\n    \"has_b_frames\": 2,\n    \"pix_fmt\": \"yuv420p\",\n    \"level\": 10,\n    \"color_range\": \"tv\",\n    \"color_space\": \"bt709\",\n    \"color_transfer\": \"bt709\",\n    \"color_primaries\": \"bt709\",\n    \"chroma_location\": \"left\",\n    \"field_order\": \"progressive\",\n    \"is_avc\": \"true\",\n    \"nal_length_size\": \"4\",\n    \"id\": \"0x1\",\n    \"r_frame_rate\": \"24/1\",\n    \"avg_frame_rate\": \"24/1\",\n    \"time_base\": \"1/24\",\n    \"start_pts\": 0,\n    \"start_time\": \"0.000000\",\n    \"duration_ts\": 48,\n    \"duration\": \"2.000000\",\n    \"bit_rate\": \"8168\",\n    \"bits_per_raw_sample\": \"8\",\n    \"nb_frames\": \"48\",\n    \"extradata_size\": 48,\n    \"disposition\": {\n      \"default\": 1,\n      \"dub\": 0,\n      \"original\": 0,\n      \"comment\": 0,\n      \"lyrics\": 0,\n      \"karaoke\": 0,\n      \"forced\": 0,\n      \"hearing_impaired\": 0,\n      \"visual_impaired\": 0,\n      \"clean_effects\": 0,\n      \"attached_pic\": 0,\n      \"timed_thumbnails\": 0,\n      \"non_diegetic\": 0,\n      \"captions\": 0,\n      \"descriptions\": 0,\n      \"metadata\": 0,\n      \"dependent\": 0,\n      \"still_image\": 0,\n      \"multilayer\": 0\n    },\n    \"tags\": {\n      \"language\": \"und\",\n      \"handler_name\": \"VideoHandler\",\n      \"encoder\": \"Lavc63.1.101 libx264\"\n    }\n  },\n  \"audioStream\": {\n    \"index\": 1,\n    \"codec_name\": \"aac\",\n    \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n    \"profile\": \"LC\",\n    \"codec_type\": \"audio\",\n    \"codec_tag_string\": \"mp4a\",\n    \"codec_tag\": \"0x6134706d\",\n    \"mime_codec_string\": \"mp4a.40.2\",\n    \"sample_fmt\": \"fltp\",\n    \"sample_rate\": \"48000\",\n    \"channels\": 2,\n    \"channel_layout\": \"stereo\",\n    \"bits_per_sample\": 0,\n    \"initial_padding\": 1024,\n    \"id\": \"0x2\",\n    \"r_frame_rate\": \"0/0\",\n    \"avg_frame_rate\": \"0/0\",\n    \"time_base\": \"1/48000\",\n    \"start_pts\": 0,\n    \"start_time\": \"0.000000\",\n    \"duration_ts\": 96000,\n    \"duration\": \"2.000000\",\n    \"bit_rate\": \"2315\",\n    \"nb_frames\": \"95\",\n    \"extradata_size\": 5,\n    \"disposition\": {\n      \"default\": 1,\n      \"dub\": 0,\n      \"original\": 0,\n      \"comment\": 0,\n      \"lyrics\": 0,\n      \"karaoke\": 0,\n      \"forced\": 0,\n      \"hearing_impaired\": 0,\n      \"visual_impaired\": 0,\n      \"clean_effects\": 0,\n      \"attached_pic\": 0,\n      \"timed_thumbnails\": 0,\n      \"non_diegetic\": 0,\n      \"captions\": 0,\n      \"descriptions\": 0,\n      \"metadata\": 0,\n      \"dependent\": 0,\n      \"still_image\": 0,\n      \"multilayer\": 0\n    },\n    \"tags\": {\n      \"language\": \"und\",\n      \"handler_name\": \"SoundHandler\"\n    }\n  },\n  \"audioSamples\": {\n    \"expected\": 96000,\n    \"effective\": 96000.0,\n    \"decoded\": 96000,\n    \"codecPadding\": 0,\n    \"analysisTrim\": [\n      0,\n      96000\n    ],\n    \"policy\": \"Container effective duration checked independently; codec padding excluded from signal analysis\"\n  },\n  \"audioAlignment\": {\n    \"status\": \"not_applicable\",\n    \"reason\": \"Silent source\"\n  },\n  \"encodedCueAlignment\": [],\n  \"encodedLoudness\": {\n    \"input_i\": null,\n    \"input_tp\": null,\n    \"input_lra\": 0.0,\n    \"input_thresh\": -70.0,\n    \"output_i\": null,\n    \"output_tp\": null,\n    \"output_lra\": 0.0,\n    \"output_thresh\": -70.0,\n    \"normalization_type\": \"linear\",\n    \"target_offset\": null\n  },\n  \"loudnessStatus\": \"not_applicable\",\n  \"signal\": {\n    \"status\": \"pass\",\n    \"failures\": [],\n    \"samples\": 96000,\n    \"samplePeak\": 0.0,\n    \"rms\": 0.0,\n    \"dcOffset\": [\n      0.0,\n      0.0\n    ],\n    \"maxSampleJump\": 0.0,\n    \"lastMillisecondPeak\": 0.0,\n    \"listening\": \"unverified\"\n  },\n  \"perceptualReview\": \"unverified\",\n  \"userAcceptance\": \"unverified\",\n  \"colorConversion\": \"scale to full-range BT.709-matrix YUV444p12; colorspace converts sRGB transfer to BT.709 limited YUV420p\",\n  \"ffmpeg\": \"ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers\"\n}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/match.py",
+      "verify",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r002"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\"status\": \"pass\", \"numericStatus\": \"pass\", \"events\": \"not_applicable\"}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/encode.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r002",
+      "--final"
+    ],
+    "returncode": 1,
+    "expected": 1,
+    "stdout": "",
+    "stderr": "ERROR: [Errno 2] No such file or directory: 'WORKSPACE/outputs/v020-test-workspace/projects/match-fixture/out/r002/review/qa.json'"
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/sync.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r002",
+      "--kind",
+      "reference"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\"comparison\": \"WORKSPACE/outputs/v020-test-workspace/projects/match-fixture/out/r002/comparison.mp4\", \"kind\": \"reference\", \"coverage\": 1.0, \"perceptualReview\": \"unverified\"}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "WORKSPACE/outputs/reference-motion/scripts/sync.py",
+      "--project",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture",
+      "--revision",
+      "r002",
+      "--kind",
+      "revision",
+      "--before",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture/out/r001/preview.mp4",
+      "--after",
+      "WORKSPACE/outputs/v020-test-workspace/projects/match-fixture/out/r002/preview.mp4"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "stdout": "{\"comparison\": \"WORKSPACE/outputs/v020-test-workspace/projects/match-fixture/out/r002/comparison-revision.mp4\", \"kind\": \"revision\", \"durationDifferenceSeconds\": 0.0}",
+    "stderr": ""
+  }
+]

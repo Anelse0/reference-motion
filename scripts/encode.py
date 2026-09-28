@@ -147,6 +147,8 @@ def inspect_mp4(path, output, config, manifest):
 
 def preview(project, revision):
     source, config, timeline, manifest = load_revision(project, revision, require_tools=True)
+    if config.get('renderPurpose') == 'analysis-probe':
+        raise ValueError('Analysis probes cannot be encoded/promoted as production')
     output = revision_output(project, revision)
     spec, sound = config['output'], config['audio']
     if spec['width'] % 2 or spec['height'] % 2:
@@ -223,6 +225,8 @@ def validate_qa(project, output, config, artifact_hash):
 
 def final(project, revision):
     source, config, timeline, manifest = load_revision(project, revision, require_tools=True)
+    if config.get('renderPurpose') == 'analysis-probe':
+        raise ValueError('Analysis probes cannot be encoded/promoted as production')
     output = revision_output(project, revision)
     path = output / 'preview.mp4'
     if not path.is_file():
@@ -235,6 +239,9 @@ def final(project, revision):
     checked = inspect_mp4(path, output, config, manifest)
     if previous != checked or checked['status'] != 'pass' or audio['status'] != 'pass':
         raise ValueError('Final requires current complete numerical checks to pass')
+    if config['mode'] == 'match':
+        from match import require_match_verification
+        require_match_verification(project, revision, config, manifest, sha256(path))
     qa = validate_qa(project, output, config, sha256(path))
     immutable_copy(path, output / 'final.mp4')
     result = {'status': 'pass', 'artifactSha256': sha256(path), 'fingerprint': manifest['fingerprint'],
